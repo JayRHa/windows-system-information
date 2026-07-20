@@ -1,67 +1,74 @@
-<!-- unified-readme:start -->
+<!-- jr-brand:start -->
 <div align="center">
-
-# System Information Tool
-
-**PowerShell-based system information gathering tool for Windows endpoint diagnostics.**
-
-Build. Automate. Share.
-
-[![GitHub stars](https://img.shields.io/github/stars/JayRHa/SystemInformationTool?style=for-the-badge&logo=github&color=f4c542)](https://github.com/JayRHa/SystemInformationTool/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/JayRHa/SystemInformationTool?style=for-the-badge&logo=github&color=4078c0)](https://github.com/JayRHa/SystemInformationTool/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/JayRHa/SystemInformationTool?style=for-the-badge&logo=github&color=d73a4a)](https://github.com/JayRHa/SystemInformationTool/issues)
-[![Contributors](https://img.shields.io/github/contributors/JayRHa/SystemInformationTool?style=for-the-badge&logo=github&color=28a745)](https://github.com/JayRHa/SystemInformationTool/graphs/contributors)
-
-<p>
-  <a href="https://jannikreinhard.com/">Blog</a> ·
-  <a href="https://www.linkedin.com/in/jannik-r/">LinkedIn</a> ·
-  <a href="https://x.com/jannik_reinhard">X</a>
+  <a href="https://jannikreinhard.com/">
+    <img src="https://raw.githubusercontent.com/JayRHa/.github/main/assets/readme/tool.svg" alt="Jannik Reinhard — AI, Cloud and Endpoint Management" width="100%">
+  </a>
+  <h1>System Information Tool</h1>
+  <p><strong>PowerShell-based system information gathering tool for Windows endpoint diagnostics.</strong></p>
+  <p>
+  <a href="https://jannikreinhard.com/"><img src="https://img.shields.io/badge/Website-0A5FC0?style=flat-square&amp;logo=wordpress&amp;logoColor=white" alt="Website"></a>
+  <a href="https://github.com/JayRHa"><img src="https://img.shields.io/badge/GitHub-081427?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub"></a>
+  <a href="https://www.linkedin.com/in/jannik-r/"><img src="https://img.shields.io/badge/LinkedIn-0795FF?style=flat-square&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn"></a>
+  <a href="https://x.com/jannik_reinhard"><img src="https://img.shields.io/badge/X-081427?style=flat-square&amp;logo=x&amp;logoColor=white" alt="X"></a>
+  <a href="https://www.youtube.com/@ModernDevMgmt/featured"><img src="https://img.shields.io/badge/YouTube-0A5FC0?style=flat-square&amp;logo=youtube&amp;logoColor=white" alt="YouTube"></a>
 </p>
-
----
-
-`Endpoint Management` | `PowerShell` | `Public` | `Maintained`
-
+  <p><sub>Tool · App · CLI · PowerShell · Practical by design</sub></p>
 </div>
+<!-- jr-brand:end -->
 
-## What is this?
+## Overview
 
-System Information Tool supports Microsoft Intune and endpoint management workflows such as automation, troubleshooting, remediation, deployment, or reporting.
+The System Information Tool shows important Windows device details in one place. It also provides practical actions for troubleshooting Microsoft Intune and the Intune Management Extension. You can add your own scripts for self-service support.
 
-## Project Context
+![System Information Tool](assets/toolView.png)
 
-- Use it when Intune work should be scripted, packaged, synchronized, or made easier to repeat.
-- Most workflows start from repository assets, then move through Microsoft Graph, Intune, or device-side execution.
-- This repository is maintained as a practical project and reference asset.
+## Installation
 
-## How It Works
-
-The repository stores scripts or tooling, administrators configure or run them, Intune and Microsoft Graph apply the work, and endpoint results feed back into reports or follow-up actions.
-
-```mermaid
-flowchart LR
-    Repo[Repository assets] --> Admin[Administrator workflow]
-    Admin --> Graph[Microsoft Graph or Intune]
-    Graph --> Device[Managed endpoint]
-    Device --> Result[Detection, remediation, or report]
-    Result --> Review[Review and iterate]
-    Review --> Repo
+```powershell
+git clone https://github.com/JayRHa/SystemInformationTool.git
+cd SystemInformationTool
+Get-ChildItem -Recurse *.dll | Unblock-File
+.\Install-SystemInformationTool.ps1
 ```
 
-## Quick Start
+The installation wrapper creates the Start menu entry and prepares the bundled libraries.
 
-1. Review the project context and workflow below.
-2. Clone the repository:
+## Start the Tool
 
-   ```bash
-   git clone https://github.com/JayRHa/SystemInformationTool.git
-   ```
+```powershell
+.\Start-SystemInformationTool.ps1
+```
 
-3. Continue with the setup, usage, or workflow sections below.
+## Features
+
+### Information View
+
+Review the hostname, IP addresses, serial number, memory and other device attributes.
+
+### Microsoft Intune and Support Actions
+
+Run common troubleshooting actions for Microsoft Intune and the Intune Management Extension.
+
+![Microsoft Intune actions](assets/intune.png)
+
+### Custom Self-Service Actions
+
+Place a PowerShell script in the `scripts/` folder and register its display name and file name in `_actions.json`.
+
+![Custom support actions](assets/support.png)
+
+## License
+
+This project is available under the terms in [LICENSE](LICENSE).
+
+<!-- jr-brand-footer:start -->
 
 ---
-<!-- unified-readme:end -->
 
-# System Information Tool
+<div align="center">
+  <p><sub>Built and maintained by <a href="https://jannikreinhard.com/">Jannik Reinhard</a> · Microsoft MVP for Security and AI Platform.</sub></p>
+  <p><a href="https://www.buymeacoffee.com/jannikreinf">Support the open-source work</a></p>
+  <p><strong>Stay healthy, Cheers Jannik</strong></p>
+</div>
 
-PowerShell-based system information gathering tool for Windows endpoint diagnostics.
+<!-- jr-brand-footer:end -->
